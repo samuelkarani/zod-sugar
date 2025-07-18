@@ -3,12 +3,12 @@
     /* Base Options: */
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "ESNext",
+    "target": "esnext",
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
-    // "isolatedModules": true,
-    // "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
 
     /* Strictness */
     "strict": true,
@@ -16,11 +16,14 @@
     "noImplicitOverride": true,
 
     /* If transpiling with TypeScript: */
-    "module": "NodeNext",
+    "module": "nodenext",
     "outDir": "dist",
     "sourceMap": true,
 
-    /* If your code doesn't run in the DOM: */
-    "lib": ["es2022"]
+    /* AND if you're building for a library: */
+    "declaration": true,
+
+    /* If your code runs in the DOM: */
+    "lib": ["es2022", "dom", "dom.iterable"]
   }
 }
