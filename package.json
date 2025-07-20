@@ -1,6 +1,6 @@
 {
   "name": "zod-sugar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Creates a zod schema from a javascript value",
   "license": "ISC",
   "author": "Samuel Karani Mbaabu",

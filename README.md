@@ -1,3 +1,5 @@
+Medium article: https://medium.com/@samiezkay/8d70198ffc72
+
 # zod-sugar
 
 Creates a zod schema from a javascript value. Basically zod in reverse - or zod backwards.
@@ -12,6 +14,7 @@ const object = {
    qux: { foo: "bar" },
 }
 const schema = createZod(object);
+// schema is a ZodObject
 const result = schema.safeParse(value);
 // result.success === true
 
@@ -21,11 +24,17 @@ const result = schema.safeParse(value);
 
 ```
 npm install zod-sugar
+```
+
+```
 yarn add zod-sugar
+```
+
+```
 pnpm install zod-sugar
 ```
 
-### More examples
+### Examples
 
 ```
 createZod(null) // ZodNull
