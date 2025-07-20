@@ -1,6 +1,6 @@
 import { strictEqual } from "node:assert";
 import { describe, it } from "node:test";
-import { createZod } from "./index.js";
+import { createZod } from "zod-sugar";
 
 function test(value: unknown) {
   const schema = createZod(value);

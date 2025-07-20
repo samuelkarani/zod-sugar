@@ -1,12 +1,14 @@
 {
   "name": "zod-sugar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Creates a zod schema from a javascript value",
   "license": "ISC",
   "author": "Samuel Karani Mbaabu",
   "type": "module",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "tsx src/index.tests.ts"
+    "build": "tsc",
+    "test": "tsx test/index.ts"
   },
   "dependencies": {
     "zod": "^3.25.67"
@@ -20,9 +22,15 @@
     "zod",
     "schema",
     "sugar",
-    "typescript",
-    "javascript",
     "zod backwards",
     "zod reverse"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelkarani/zod-sugar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/samuelkarani/zod-sugar/issues"
+  },
+  "homepage": "https://github.com/samuelkarani/zod-sugar#readme"
 }
