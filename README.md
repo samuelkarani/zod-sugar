@@ -1,13 +1,10 @@
-Medium article: https://medium.com/@samiezkay/8d70198ffc72
-
 # zod-sugar
 
-Creates a zod schema from a javascript value. Basically zod in reverse - or zod backwards.
+Creates a zod schema from a javascript value. Basically zod in reverse or zod backwards.
 
-```
-import { createZod } from "zod-sugar";
+Built with Typescript for Node.js or the Browser.
 
-const object = {
+<!-- const object = {
    foo: "bar",
    bar: 1,
    baz: [1, 2, 3],
@@ -15,8 +12,16 @@ const object = {
 }
 const schema = createZod(object);
 // schema is a ZodObject
-const result = schema.safeParse(value);
-// result.success === true
+const result = schema.safeParse(object);
+// result.success === true -->
+
+```
+import { createZod } from "zod-sugar";
+
+const object = { foo: "bar", baz: 1 };
+const schema = createZod(object);
+// z.object({ foo: z.string(), bar: z.number() });
+schema.safeParse(object).success // true
 
 ```
 
@@ -38,36 +43,45 @@ pnpm install zod-sugar
 
 ```
 createZod(null) // ZodNull
+
 createZod(undefined) // ZodUndefined
+
 createZod(1) // ZodNumber
+
 createZod("foo") // ZodString
+
 createZod(false) // ZodBoolean
+
 createZod(Symbol("foo")) // ZodSymbol
+
 createZod(BigInt(1)) // ZodBigInt
+
 createZod([1, 2, 3]) // ZodArray
+
 createZod({ foo: "bar", baz: 1 }) // ZodObject
+
 createZod({
-   foo: "bar",
-   bar: 1,
-   baz: [1, 2, 3],
+   string: "bar",
+   number: 1,
+   array: [1, 2, 3],
    bigint: BigInt(9007199254740991),
-   qux: {
-      0: 0,
-      foo: false,
-      bar: {
-         foo: "bar",
+   object: {
+      number: 0,
+      boolean: false,
+      object: {
+         string: "bar",
          null: null,
          [Symbol("foo")]: "bar",
       },
-      baz: ["1", "2", "3"],
+      array: ["1", "2", "3"],
    },
    undefined: undefined,
-   }) // ZodObject
+}) // ZodObject
 ```
 
 <!-- Works with Zod v4 💪 -->
 
-Caveats:
+### Caveats:
 
 1. While Zod itself attempts to mirror Typescript 1-1, this library only handles common Javascript values:
 
@@ -88,3 +102,11 @@ Support for more values coming soon:
 - map
 
 2. The schema returned is the most generic possible for obvious reasons - we can't infer beyond the values provided.
+
+### Additional details
+
+Medium article: https://medium.com/@samiezkay/8d70198ffc72
+
+Buy me a coffee ☕ https://buymeacoffee.com/samuelkarani
+
+My Twitter: https://x.com/samuel_karani
