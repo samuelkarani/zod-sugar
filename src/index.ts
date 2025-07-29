@@ -31,7 +31,7 @@ export function getPrimitive(value: Primitive): z.ZodSchema {
   throw new Error("Unknown type " + String(value));
 }
 
-export function createZod(unknown: unknown): z.ZodSchema {
+export default function createZod(unknown: unknown): z.ZodSchema {
   if (unknown === null) {
     return z.null();
   }
